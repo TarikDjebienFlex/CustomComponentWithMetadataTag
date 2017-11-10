@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Form xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300">
+	<fx:Script>
+		<![CDATA[
+			import spark.events.TextOperationEvent;
+
+			protected function textinput1_changeHandler(event:TextOperationEvent):void
+			{
+				dispatchEvent( new FormEvent( FormEvent.TEXT_ENTER ) )
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	
+	<fx:Metadata>
+		[Event(type="FormEvent", name="textEnter")]
+	</fx:Metadata>
+	
+	
+	<mx:FormItem width="100%" label="Nom">
+		<s:TextInput width="100%" change="textinput1_changeHandler(event)"/>
+	</mx:FormItem>
+	<mx:FormItem width="100%" label="Prénom">
+		<s:TextInput width="100%" />
+	</mx:FormItem>
+	<mx:FormItem width="100%" label="Ville">
+		<s:TextInput width="100%" />
+	</mx:FormItem>
+	<mx:FormItem width="100%" label="Code postal">
+		<s:TextInput width="100%" />
+	</mx:FormItem>
+	<mx:FormItem width="100%" label="Profession">
+		<s:TextInput width="100%" />
+	</mx:FormItem>
+	
+</mx:Form>
